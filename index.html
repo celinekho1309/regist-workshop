@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html lang="id"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Pendaftaran Workshop - SOP Lengkap</title> 
+  <!-- Memanggil Bootstrap 5 --> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
+</head> 
+<body class="bg-body-tertiary"> 
+  <main class="container py-5" style="max-width: 580px;"> 
+    <div class="card shadow-sm"> 
+      <div class="card-body p-4"> 
+        <h1 class="h3 mb-4">Form Registrasi Workshop</h1> 
+ 
+        <form id="formDaftar" novalidate> 
+          <!-- Nama -->
+          <div class="mb-3"> 
+            <label for="nama" class="form-label">Nama lengkap</label> 
+            <input id="nama" type="text" class="form-control" placeholder="Contoh: Andi Pratama" minlength="3" required> 
+            <div id="nama-error" class="invalid-feedback"></div> 
+          </div> 
+ 
+          <!-- Email -->
+          <div class="mb-3"> 
+            <label for="email" class="form-label">Email</label> 
+            <input id="email" type="email" class="form-control" placeholder="nama@domain.com" required> 
+            <div id="email-error" class="invalid-feedback"></div> 
+          </div> 
+ 
+          <!-- Nombor HP (Kriteria A: Dasar) -->
+          <div class="mb-3"> 
+            <label for="hp" class="form-label">Nomor WhatsApp</label> 
+            <input id="hp" type="text" inputmode="numeric" class="form-control" placeholder="081234567890" pattern="^08[0-9]{8,11}$" required> 
+            <div class="form-text">Diawali 08, 10–13 digit.</div> 
+            <div id="hp-error" class="invalid-feedback"></div> 
+          </div> 
+ 
+          <!-- Password (Kriteria B: Menengah) -->
+          <div class="mb-3"> 
+            <label for="password" class="form-label">Password</label> 
+            <input id="password" type="password" class="form-control" minlength="8" required> 
+            <div id="password-error" class="invalid-feedback"></div> 
+          </div> 
+ 
+          <!-- Re-type Password (Kriteria B: Menengah) -->
+          <div class="mb-3"> 
+            <label for="repassword" class="form-label">Ulangi Password (Re-type)</label> 
+            <input id="repassword" type="password" class="form-control" required> 
+            <div id="repassword-error" class="invalid-feedback"></div> 
+          </div> 
+ 
+          <!-- Tanggal Lahir (Kriteria C: Lanjut - Minimal 20 tahun) -->
+          <div class="mb-3"> 
+            <label for="tgl_lahir" class="form-label">Tanggal Lahir (Usia min. 20 tahun)</label> 
+            <input id="tgl_lahir" type="date" class="form-control" required> 
+            <div id="tgl_lahir-error" class="invalid-feedback"></div> 
+          </div> 
+ 
+          <!-- Tanggal Kehadiran Workshop -->
+          <div class="mb-4"> 
+            <label for="tanggal" class="form-label">Tanggal Kehadiran</label> 
+            <input id="tanggal" type="date" class="form-control" required> 
+            <div id="tanggal-error" class="invalid-feedback"></div> 
+          </div> 
+ 
+          <button id="tombolKirim" type="submit" class="btn btn-primary w-100">Daftar Sekarang</button> 
+          <div id="statusForm" class="mt-3"></div> 
+        </form> 
+      </div> 
+    </div> 
+  </main> 
+
+  <script src="script.js"></script> 
+</body> 
+</html>
